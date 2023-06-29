@@ -1,4 +1,4 @@
-import getConnection from "../db/database.js";
+import getConnection from "./../db/database.js";
 
 const getCategorias = async (req, res) => {
     try {
@@ -24,6 +24,20 @@ const addCategorias = async (req, res) => {
 
         res.json(result);
 
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+
+const getCategoria = async (req, res) => {
+    try {
+        console.log(req.params);
+        const {id} = req.params
+        const connection = await getConnection();
+        const result = await connection.query("SELECT * FROM categorias");
+        console.log(result);
+        res.json(result)
     } catch (error) {
         res.status(500);
         res.send(error.message);
