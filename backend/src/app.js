@@ -5,6 +5,7 @@ const app = express();
 
 app.set("port", 4000);
 
+app.use("/home",express.static('frontend'))
 
 //Middleware
 app.use(express.json());

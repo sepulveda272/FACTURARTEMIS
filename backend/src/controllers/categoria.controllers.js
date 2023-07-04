@@ -30,7 +30,7 @@ const addCategorias = async (req, res) => {
     }
 }
 
-const getCategoria = async (req, res) => {
+/* const getCategoria = async (req, res) => {
     try {
         console.log(req.params);
         const {id} = req.params
@@ -42,7 +42,7 @@ const getCategoria = async (req, res) => {
         res.status(500);
         res.send(error.message);
     }
-}
+} */
 
 export const methodsHTTP = {
     getCategorias,
