@@ -21,7 +21,7 @@ async function mostrarLista(){
             <td>${CategoriaNombre}</td>
             <td>${Descripcion}</td>
             <td>${Imagen}</td>
-            <th><a class="btn btn-success editar" data-categoriaEditar="${CategoriaID}" data-bs-toggle="modal" data-bs-target="#updateCategory" data-bs-whatever="@getbootstrap">EDITAR</a></th>
+            <th><a class="btn btn-success editar" idActualizar="${CategoriaID}" data-bs-toggle="modal" data-bs-target="#updateCategory" data-bs-whatever="@getbootstrap">EDITAR</a></th>
             <th><a data-categoria="${CategoriaID}"  class="btn btn-danger delete">ELIMINAR</a></th>
           </tr>
         `
@@ -75,34 +75,45 @@ function confirmDelete(e){
 
 
 
-//EDITAR CATEGORIA - CRUD (U)
+//EDITAR CATEGORIA - CRUD (U)const 
+const nuevosDatos = document.querySelector('#categories')
+nuevosDatos.addEventListener('click',actualizar)
 
-const formularioEdit = document.querySelector("#formularioUpdate")
-formularioEdit.addEventListener('submit', validarEdit)
 
-function validarEdit(e){
+function actualizar(e){
     e.preventDefault();
-    const CategoriaID = parseInt(e.target.dataset.categoria)
-    const CategoriaNombre = document.querySelector("#CategoriaNombreUpdate").value;
-    const Descripcion = document.querySelector("#DescripcionUpdate").value;
-    const Imagen = document.querySelector("#ImagenUpdate").value;
-
-    const categoria = {
-        CategoriaID,
-        CategoriaNombre,
-        Descripcion,
-        Imagen
-    }
-
-    console.log(categoria);
-    /* if(validate(categoria)){
-        alert ('todos los campos son obligatirios')
-        nuevaCategoria (categoria)
+  
+    if(e.target.classList.contains('editar')){
         
-    }
- */
+        const idActualizar= e.target.getAttribute('idActualizar')
+        console.log(idActualizar);
 
-}
+        const datosNuw = document.querySelector('#formularioUpdate')
+        datosNuw.addEventListener('submit',uppdateCategoria)
+    
+    function uppdateCategoria(e){
+        e.preventDefault();
+        
+        const  CategoriaNombre = document.querySelector('#CategoriaNombreUpdate').value;
+        const  Descripcion = document.querySelector('#DescripcionUpdate').value;
+        const  Imagen = document.querySelector('#ImagenUpdate').value;
+        console.log(CategoriaNombre);
+        
+    
+        const datos={
+            CategoriaID:idActualizar,
+            CategoriaNombre,
+            Descripcion,
+            Imagen
+        }
+        console.log(datos);
+    
+        editarCategory(datos)
+    }  
+
+    }
+
+    }
 
  function validate(objeto){
     return !Object.values(objeto).every( element => element !=='');

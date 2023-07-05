@@ -51,9 +51,9 @@ export const deleteCategory = async (id) => {
 
 
 
-export const editarCategory = async (category) => {
+export const editarCategory = async (datos) => {
     try {
-        await fetch(`${url}/${category.categoriaID}`, {
+        await fetch(`${url}/${datos.CategoriaID}`, {
             method: "PUT",
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(datos)
