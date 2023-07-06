@@ -1,141 +1,128 @@
-* {
+*{
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
-
-/* header y footer ini */
-.main-header {
-  background-color: rgb(121, 121, 121);
-}
-.bg-verde {
-  background-color: #000000 !important;
-  font-size: 16px;
-}
-.navbar-general a {
-  color: black;
-  margin-right: 20px;
-  text-decoration: none;
-  padding: 10px 12px;
-  font-size: 14px;
-}
-
-.navbar-general a:hover {
-  color: white;
-  margin-right: 20px;
-  text-decoration: none;
-  background-color: black;
-  border-radius: 30px;
-}
-.navbar-facturartemis {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  gap: 20px;
-  margin-bottom: 5px;
-}
-
-.btn-consultas {
-  background-color: #000000 !important;
-  padding: 15px 28px;
-  color: white;
-  border-radius: 30px;
-  border: none;
-  cursor: pointer;
-}
-
-.logo {
-  width: 140px;
-  height: auto;
-}
-/* header yfooter fin */
-/* HERO */
-.hero {
-  background-color: black;
-  text-align: center;
-  padding: 50px;
-  margin-bottom: 30px;
-}
-html {
-  font-size: 62.5%;
-}
+/* Estilos CSS */
 body {
-  font-family: "Open Sans", sans-serif;
-  background-color: rgb(1, 22, 19) !important;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://img.freepik.com/fotos-premium/fondo-humo-rosa-azul-fondo-negro_777078-6762.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+/* Estilos para el encabezado */
+
+#linksNav a{
+  text-decoration: none;
+  color: gray;
+  font-size: 1.2rem;
+}
+
+/* Estilos para los modales */
 .modalito {
-  font-size: 2.5rem;
-}
-h1,
-h2,
-h3 {
   text-align: center;
-  color: white;
-}
-h2 {
-  font-size: 3rem;
-}
-h3 {
-  font-size: 2rem;
-}
-.heading {
-  margin-bottom: 3rem;
-  text-align: center;
-  font-size: 4.5rem;
+  margin-bottom: 20px;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.categories {
-  font-size: 3rem;
-  margin-bottom: 3rem;
-}
-
-th {
-  font-size: 2rem;
-  text-align: center !important;
-}
-
-tbody {
-  font-size: 2rem;
-  text-align: center !important;
-}
-.card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.btn.btn-primary.tamano {
   font-size: 20px;
-}
-.card-title {
-  color: black;
-}
-a {
-  font-size: 20px !important;
+  padding: 10px 30px;
+  background-color: #555;
+  border-color: #555;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.search {
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
-  margin-bottom: 30px;
+.btn.btn-primary.tamano:hover {
+  background-color: #777;
+  border-color: #777;
+  transform: scale(1.1);
 }
 
-.cuerpo {
-  font-size: 40px !important;
+.modal-content {
+  border-radius: 10px;
+  background-color: #fff;
+  animation: fade-in 1s ease-in-out;
+}
+
+.modal-header {
+  border-radius: 10px 10px 0 0;
+  background-color: #555;
+  color: #fff;
+}
+
+.modal-footer {
+  border-radius: 0 0 10px 10px;
+}
+
+.form-select-lg.mb-3 {
+  margin-bottom: 20px;
+}
+
+.form-control.formTam {
+  width: 100%;
+}
+
+/* Estilos para la tabla de categorías */
+.categories {
+  margin-top: 20px;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #fff;
+  animation: fade-in 1s ease-in-out;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: center;
+}
+
+.table thead th {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Estilos para el pie de página */
+#pie-pagina {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+.logo-footer {
+  width: 50px;
+  height: auto;
 }
 
 .pie {
-  font-size: 20px;
+  margin: 0;
+  color: #fff;
 }
 
-.tamano {
-  font-size: 18px !important;
-  margin-top: 20px;
+/* Animación de desvanecimiento */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-.formTam {
-  font-size: 20px !important;
+
+.content{
+  width: 90%;
+  margin: 2rem auto;
+}
+
+footer{
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }

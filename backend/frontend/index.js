@@ -1,5 +1,10 @@
 import { obtainCategories,nuevaCategoria,deleteCategory, editarCategory } from "./API.js";
 
+
+// Year en footer actual 
+const a = document.getElementById("yearActual").textContent = new Date().getFullYear();
+console.log(a);
+
 document.addEventListener("DOMContentLoaded", () => {
     mostrarLista()
 
